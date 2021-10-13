@@ -2,76 +2,11 @@ library universaltoastr;
 
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData.dark(),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({ Key? key }) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  late UniversalToastr universalToastr = UniversalToastr();
-
-  @override
-  void initState() {
-    super.initState();
-    universalToastr.init(context);
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    final Size size  = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Container(
-        width: size.width,
-        height: size.height,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center ,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                universalToastr.show(
-                  message: 'Track Added to Title of Playlist',
-                  location: Location.BOTTOM,
-                  duration: Duration(milliseconds: 2000),
-                  success: true
-                );
-              }, 
-              child: Text('Open Toastr')
-            ),
-          ],
-        ),
-      )
-    );
-  }
-}
-
 enum Location {
   TOP,
   BOTTOM,
   CENTER,
 }
-
 
 class UniversalToastr {
 
