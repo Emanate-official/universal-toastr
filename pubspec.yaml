@@ -1,10 +1,10 @@
 name: universaltoastr
 description: A Toastr that is simple, elegant, and modifiable
-version: 0.0.1
+version: 1.0.0
 homepage:
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.15.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
