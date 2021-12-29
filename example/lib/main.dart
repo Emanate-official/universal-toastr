@@ -91,9 +91,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         
                         const Text('Custom Overlay'),
+
                         const SizedBox(
                           height: 20
                         ),
+                        
                         ElevatedButton(
                           onPressed: () {
                             UniversalToastr().closeOverlay();
