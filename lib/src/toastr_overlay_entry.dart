@@ -129,40 +129,48 @@ class _ToastrOverlayEntryState extends State<ToastrOverlayEntry> with TickerProv
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
 
-                          Row(
-                            children: [
+                          Container(
+                            width: size.width * .9,
+                            child: Row(
+                              children: [
 
-                              SizedBox(
-                                width: 20
-                              ),
-
-                              if(this.widget.success)
-                                Icon(
-                                  Icons.check_circle_outline_rounded,
-                                  color: green,
-                                  size: 20,
+                                SizedBox(
+                                  width: 20
                                 ),
 
-                              if(!this.widget.success)
-                                Icon(
-                                  Icons.highlight_off_rounded,
-                                  color: Colors.red[400],
-                                  size: 20,
+                                if(this.widget.success)
+                                  Icon(
+                                    Icons.check_circle_outline_rounded,
+                                    color: green,
+                                    size: 20,
+                                  ),
+
+                                if(!this.widget.success)
+                                  Icon(
+                                    Icons.highlight_off_rounded,
+                                    color: Colors.red[400],
+                                    size: 20,
+                                  ),
+
+                                SizedBox(
+                                  width: 20
                                 ),
 
-                              SizedBox(
-                                width: 20
-                              ),
-
-                              Text(
-                                widget.message,
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  color: textColor
+                                Expanded(
+                                  child: Text(
+                                    widget.message,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: textColor
+                                    ),
+                                  ),
                                 ),
-                              )
 
-                            ],
+                                SizedBox(width: 10),
+                                
+                              ],
+                            ),
                           )
                         ],
                       )
